@@ -50,4 +50,9 @@
             </asp:Repeater>
         </div>
     </div>
+    <div id="ga">
+        <h2>General Arrangements</h2>
+        <p align="center"><i>Below is a general arrangment diagram of this particular model and an approximate specification. These figures and illustration are only meant to be a guide contact us directly and discuss your exact requirements further. To view previously comissioned examples of this model click on the gallery link above.</i></p>
+        <asp:Image ID="ImageGA" runat="server" ImageUrl='<%# String.Format("~/Portals/{0}/images/boats/ga/ga{1}.gif", PortalId, boat.Name) %>' />
+    </div>
 </div>
