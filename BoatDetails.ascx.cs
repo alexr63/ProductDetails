@@ -28,6 +28,8 @@ namespace Cowrie.Modules.ProductDetails
                                 ((DotNetNuke.Framework.CDefault)Page).Title = boat.Name;
                                 Repeater1.DataSource = boat.ProductImages;
                                 Repeater1.DataBind();
+                                RepeaterSpecs.DataSource = boat.ProductSpecs;
+                                RepeaterSpecs.DataBind();
                             }
                             DataBind();
                         }
