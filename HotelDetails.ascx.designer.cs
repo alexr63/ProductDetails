@@ -40,6 +40,15 @@ namespace Cowrie.Modules.ProductDetails {
         protected global::Telerik.Web.UI.RadRating RadRatingStar;
         
         /// <summary>
+        /// ButtonBackToSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonBackToSearch;
+        
+        /// <summary>
         /// ButtonBookNow control.
         /// </summary>
         /// <remarks>

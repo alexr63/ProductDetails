@@ -16,3 +16,8 @@
 	margin: 0 20px 0 0;
 	display: inline;
 }
+
+div#footer
+{
+    text-align: right;
+}

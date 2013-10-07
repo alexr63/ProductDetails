@@ -1,7 +1,11 @@
 ﻿// Copyright (c) 2012 Cowrie
 
 using System;
+using System.Text;
+using System.Web.UI;
 using DotNetNuke.Entities.Modules;
+using DotNetNuke.Entities.Portals;
+using DotNetNuke.Entities.Tabs;
 using DotNetNuke.Services.Exceptions;
 using ProductDetails;
 using ProductList;
@@ -30,6 +34,14 @@ namespace Cowrie.Modules.ProductDetails
                                 Repeater1.DataSource = hotel.ProductImages;
                                 Repeater1.DataBind();
                             }
+                            StringBuilder sb = new StringBuilder();
+                            var breadCrumbs = PortalSettings.ActiveTab.BreadCrumbs;
+                            foreach (var breadCrumb in breadCrumbs)
+                            {
+                                sb.AppendFormat("{0} > ", ((TabInfo)breadCrumb).Title);
+                            }
+                            sb.AppendFormat("{0}", hotel.Name);
+                            ((DotNetNuke.Framework.CDefault)this.Page).Title = sb.ToString();
                             DataBind();
                         }
                     }
@@ -55,6 +67,11 @@ namespace Cowrie.Modules.ProductDetails
                     }
                 }
             }
+        }
+
+        protected void ButtonBackToSearch_Click(object sender, EventArgs e)
+        {
+            Response.Redirect(DotNetNuke.Common.Globals.NavigateURL(PortalSettings.ActiveTab.ParentId));
         }
     }
 }

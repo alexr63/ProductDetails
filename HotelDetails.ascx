@@ -33,8 +33,12 @@
     <h1><%# hotel.Name %></h1>
     <h2><%# hotel.UnitCost.Value.ToString("C") %></h2>
     <telerik:RadRating ID="RadRatingStar" runat="server" Value='<%# Convert.ToDecimal(hotel.Star) %>' ReadOnly="True" />
-    <asp:Button ID="ButtonBookNow" runat="server" Text="Book Now!" CausesValidation="False" OnClick="ButtonBookNow_Click" UseSubmitBehavior="False" />
     <div id="description" style="padding: 10px;">
         <%# hotel.Description %>
     </div>
+</div>
+<div id="footer">
+    <asp:Button ID="ButtonBackToSearch" runat="server" Text="Back to Search" CausesValidation="False" OnClick="ButtonBackToSearch_Click" UseSubmitBehavior="False" />
+    &nbsp;
+    <asp:Button ID="ButtonBookNow" runat="server" Text="Book Now!" CausesValidation="False" OnClick="ButtonBookNow_Click" UseSubmitBehavior="False" />
 </div>
