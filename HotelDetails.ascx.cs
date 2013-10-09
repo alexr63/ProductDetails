@@ -34,14 +34,27 @@ namespace Cowrie.Modules.ProductDetails
                                 Repeater1.DataSource = hotel.ProductImages;
                                 Repeater1.DataBind();
                             }
-                            StringBuilder sb = new StringBuilder();
-                            var breadCrumbs = PortalSettings.ActiveTab.BreadCrumbs;
-                            foreach (var breadCrumb in breadCrumbs)
+                            var page = (DotNetNuke.Framework.CDefault) this.Page;
+                            page.Title = String.Format("{0} | {1}", PortalSettings.PortalName, hotel.Name);
+                            page.Description = hotel.Description;
+                            var keyWords = hotel.Name;
+                            if (!String.IsNullOrEmpty(hotel.Address))
                             {
-                                sb.AppendFormat("{0} > ", ((TabInfo)breadCrumb).Title);
+                                keyWords += ", " + hotel.Address;
                             }
-                            sb.AppendFormat("{0}", hotel.Name);
-                            ((DotNetNuke.Framework.CDefault)this.Page).Title = sb.ToString();
+                            if (hotel.Location != null)
+                            {
+                                keyWords += ", " + hotel.Location.Name;
+                                if (hotel.Location.ParentLocation != null)
+                                {
+                                    keyWords += ", " + hotel.Location.ParentLocation.Name;
+                                    if (hotel.Location.ParentLocation.ParentLocation != null)
+                                    {
+                                        keyWords += ", " + hotel.Location.ParentLocation.ParentLocation.Name;
+                                    }
+                                }
+                            }
+                            page.KeyWords = keyWords;
                             DataBind();
                         }
                     }
