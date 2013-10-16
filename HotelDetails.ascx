@@ -31,7 +31,7 @@
 </div>
 <div id="details" style="padding: 10px;">
     <h1><%# hotel.Name %></h1>
-    <h2><%# hotel.UnitCost.Value.ToString("C") %></h2>
+    <h2><%# hotel.CurrencyCode %><%# hotel.UnitCost.Value.ToString("#0.00") %></h2>
     <telerik:RadRating ID="RadRatingStar" runat="server" Value='<%# Convert.ToDecimal(hotel.Star) %>' ReadOnly="True" />
     <div id="description" style="padding: 10px;">
         <%# hotel.Description %>
