@@ -1,5 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="HotelDetails.ascx.cs"
     Inherits=" Cowrie.Modules.ProductDetails.HotelDetails" %>
+<%@ Import Namespace="ProductList" %>
 <%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
 <script src='<%#ResolveUrl("~/DesktopModules/ProductDetails/Scripts/fancybox/jquery.fancybox-1.3.4.js")%>' type="text/javascript"></script>
 <link href='<%#ResolveUrl("~/DesktopModules/ProductDetails/Scripts/fancybox/jquery.fancybox-1.3.4.css")%>' type="text/css" rel="stylesheet" />
@@ -31,7 +32,7 @@
 </div>
 <div id="details" style="padding: 10px;">
     <h1><%# hotel.Name %></h1>
-    <h2><%# hotel.CurrencyCode %><%# hotel.UnitCost.Value.ToString("#0.00") %></h2>
+    <h2><%# Utils.GetCurrencySymbol(hotel.CurrencyCode) %><%# hotel.UnitCost.Value.ToString("#0.00") %></h2>
     <telerik:RadRating ID="RadRatingStar" runat="server" Value='<%# Convert.ToDecimal(hotel.Star) %>' ReadOnly="True" />
     <div id="description" style="padding: 10px;">
         <%# hotel.Description %>
