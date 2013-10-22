@@ -107,6 +107,7 @@
     <Compile Include="BoatDetails.ascx.designer.cs">
       <DependentUpon>BoatDetails.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Components\ProductDetailsController.cs" />
     <Compile Include="HotelDetails.ascx.cs">
       <DependentUpon>HotelDetails.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

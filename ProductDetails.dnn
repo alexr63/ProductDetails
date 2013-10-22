@@ -6,8 +6,8 @@
       <foldername>ProductDetails</foldername>
       <modulename>ProductDetails</modulename>
       <description>A Product Details module</description>
-      <version>01.01.07</version>
-      <businesscontrollerclass></businesscontrollerclass>
+      <version>01.02.00</version>
+      <businesscontrollerclass>Cowrie.ProductDetails.Components.ProductDetailsController</businesscontrollerclass>
       <modules>
         <module>
           <friendlyname>Hotel Details</friendlyname>
