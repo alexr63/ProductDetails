@@ -34,7 +34,7 @@ namespace Cowrie.ProductDetails.Components
 		        foreach (var hotel in hotels)
 		        {
                     SearchItemInfo searchInfo = new SearchItemInfo(hotel.Name, hotel.Description, hotel.CreatedByUser, hotel.CreatedDate,
-                                                        modInfo.ModuleID, hotel.Id.ToString(), hotel.Description, "Item=" + hotel.Id.ToString());
+                                                        modInfo.ModuleID, hotel.Id.ToString(), hotel.Description, "Id=" + hotel.Id);
                     searchItems.Add(searchInfo);
                 }
             }
