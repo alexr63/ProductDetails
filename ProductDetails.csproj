@@ -107,6 +107,13 @@
     <Compile Include="BoatDetails.ascx.designer.cs">
       <DependentUpon>BoatDetails.ascx</DependentUpon>
     </Compile>
+    <Compile Include="ClothDetails.ascx.cs">
+      <DependentUpon>ClothDetails.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClothDetails.ascx.designer.cs">
+      <DependentUpon>ClothDetails.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Components\ProductDetailsController.cs" />
     <Compile Include="HotelDetails.ascx.cs">
       <DependentUpon>HotelDetails.ascx</DependentUpon>
@@ -122,6 +129,7 @@
   <ItemGroup>
     <None Include="Build\build.bat" />
     <Content Include="BoatDetails.ascx" />
+    <Content Include="ClothDetails.ascx" />
     <Content Include="HotelDetails.ascx" />
     <Content Include="module.css" />
     <Content Include="packages.config" />
