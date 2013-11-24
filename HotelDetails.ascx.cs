@@ -36,7 +36,7 @@ namespace Cowrie.Modules.ProductDetails
                             }
                             var page = (DotNetNuke.Framework.CDefault) this.Page;
                             page.Title = String.Format("{0} | {1}", PortalSettings.PortalName, hotel.Name);
-                            page.Description = hotel.Description;
+                            page.Description = hotel.Description.TruncateAtWord(150);
                             var keyWords = hotel.Name;
                             if (!String.IsNullOrEmpty(hotel.Address))
                             {
