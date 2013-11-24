@@ -1,6 +1,7 @@
 ﻿// Copyright (c) 2012 Cowrie
 
 using System;
+using System.Collections.Generic;
 using System.Text;
 using System.Web.UI;
 using DotNetNuke.Entities.Modules;
@@ -42,19 +43,22 @@ namespace Cowrie.Modules.ProductDetails
                             {
                                 keyWords += ", " + hotel.Address;
                             }
+                            List<string> locations = new List<string>();
                             if (hotel.Location != null)
                             {
-                                keyWords += ", " + hotel.Location.Name;
+                                locations.Add(hotel.Location.Name);
                                 if (hotel.Location.ParentLocation != null)
                                 {
-                                    keyWords += ", " + hotel.Location.ParentLocation.Name;
+                                    locations.Add(hotel.Location.ParentLocation.Name);
                                     if (hotel.Location.ParentLocation.ParentLocation != null)
                                     {
-                                        keyWords += ", " + hotel.Location.ParentLocation.ParentLocation.Name;
+                                        locations.Add(hotel.Location.ParentLocation.ParentLocation.Name);
                                     }
                                 }
                             }
-                            page.KeyWords = keyWords;
+                            page.KeyWords = keyWords + ", " + String.Join(", ", locations);
+                            locations.Reverse();
+                            page.Title += " | " + String.Join(" | ", locations);
                             DataBind();
                         }
                     }
