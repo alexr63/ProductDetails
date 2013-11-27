@@ -200,9 +200,9 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost/DNN_5_6_1/DesktopModules/ProductDetails</IISUrl>
+          <IISUrl>http://selectedhot.local/DesktopModules/ProductDetails</IISUrl>
           <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
-          <IISAppRootUrl>http://localhost/DNN_5_6_1</IISAppRootUrl>
+          <IISAppRootUrl>http://selectedhot.local</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
