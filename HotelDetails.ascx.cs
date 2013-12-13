@@ -88,6 +88,7 @@ namespace Cowrie.Modules.ProductDetails
 
         protected void ButtonBackToSearch_Click(object sender, EventArgs e)
         {
+            Session["ReturnFromDetails"] = true;
             Response.Redirect(DotNetNuke.Common.Globals.NavigateURL(PortalSettings.ActiveTab.ParentId));
         }
     }
