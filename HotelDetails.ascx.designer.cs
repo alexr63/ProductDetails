@@ -31,6 +31,15 @@ namespace Cowrie.Modules.ProductDetails {
         protected global::System.Web.UI.WebControls.Repeater Repeater1;
         
         /// <summary>
+        /// LabelLocation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelLocation;
+        
+        /// <summary>
         /// RadRatingStar control.
         /// </summary>
         /// <remarks>
@@ -56,5 +65,14 @@ namespace Cowrie.Modules.ProductDetails {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button ButtonBookNow;
+        
+        /// <summary>
+        /// PointOnMap1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::ProductDetails.PointOnMap PointOnMap1;
     }
 }

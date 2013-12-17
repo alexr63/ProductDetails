@@ -2,6 +2,8 @@
     Inherits=" Cowrie.Modules.ProductDetails.HotelDetails" %>
 <%@ Import Namespace="ProductList" %>
 <%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
+<%@ Register Src="~/DesktopModules/ProductDetails/PointOnMap.ascx" TagPrefix="uc1" TagName="PointOnMap" %>
+
 <script src='<%#ResolveUrl("~/DesktopModules/ProductDetails/Scripts/fancybox/jquery.fancybox-1.3.4.js")%>' type="text/javascript"></script>
 <link href='<%#ResolveUrl("~/DesktopModules/ProductDetails/Scripts/fancybox/jquery.fancybox-1.3.4.css")%>' type="text/css" rel="stylesheet" />
 <script type="text/javascript">
@@ -29,6 +31,11 @@
             </FooterTemplate>
         </asp:Repeater>
     </div>
+    <div id="location" style="padding: 10px;">
+        <h2>Locaion</h2>
+        <asp:Label runat="server" ID="LabelLocation"></asp:Label><br />
+        <%# hotel.Address %>
+    </div>
 </div>
 <div id="details" style="padding: 10px;">
     <h1><%# hotel.Name %></h1>
@@ -42,4 +49,7 @@
     <asp:Button ID="ButtonBackToSearch" runat="server" Text="Back to Search" CausesValidation="False" OnClick="ButtonBackToSearch_Click" UseSubmitBehavior="False" />
     &nbsp;
     <asp:Button ID="ButtonBookNow" runat="server" Text="Book Now!" CausesValidation="False" OnClick="ButtonBookNow_Click" UseSubmitBehavior="False" />
+    <p>
+        <uc1:PointOnMap runat="server" id="PointOnMap1" />
+    </p>
 </div>

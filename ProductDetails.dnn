@@ -6,7 +6,7 @@
       <foldername>ProductDetails</foldername>
       <modulename>ProductDetails</modulename>
       <description>A Product Details module</description>
-      <version>02.01.03</version>
+      <version>02.02.00</version>
       <businesscontrollerclass>Cowrie.ProductDetails.Components.ProductDetailsController</businesscontrollerclass>
       <modules>
         <module>
@@ -55,6 +55,9 @@
         </file>
         <file>
           <name>HotelDetails.ascx</name>
+        </file>
+        <file>
+          <name>PointOnMap.ascx</name>
         </file>
         <file>
           <name>BoatDetails.ascx</name>

@@ -59,6 +59,17 @@ namespace Cowrie.Modules.ProductDetails
                             page.KeyWords = keyWords + ", " + String.Join(", ", locations);
                             locations.Reverse();
                             page.Title += " | " + String.Join(" | ", locations);
+                            LabelLocation.Text = String.Join(", ", locations);
+                            if (hotel.Lat.HasValue && hotel.Lon.HasValue)
+                            {
+                                PointOnMap1.Visible = true;
+                                PointOnMap1.Lat = hotel.Lat.Value;
+                                PointOnMap1.Lon = hotel.Lon.Value;
+                            }
+                            else
+                            {
+                                PointOnMap1.Visible = false;
+                            }
                             DataBind();
                         }
                     }
