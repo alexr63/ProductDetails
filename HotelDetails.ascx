@@ -32,9 +32,11 @@
         </asp:Repeater>
     </div>
     <div id="location" style="padding: 10px;">
-        <h2>Locaion</h2>
+        <h2>Location</h2>
+        <%# hotel.Name %><br />
+        <%# hotel.Address %><br />
         <asp:Label runat="server" ID="LabelLocation"></asp:Label><br />
-        <%# hotel.Address %>
+        <%# hotel.PostCode %>
     </div>
 </div>
 <div id="details" style="padding: 10px;">

@@ -8,17 +8,15 @@ namespace ProductDetails
 {
     public partial class PointOnMap : System.Web.UI.UserControl
     {
-        public double Lat { get; set; }
-        public double Lon { get; set; }
+        public double? Lat { get; set; }
+        public double? Lon { get; set; }
         public int InitialZoom { get; set; }
         public string Title { get; set; }
+        public string Address { get; set; }
 
         public PointOnMap()
         {
-            Lat = 51.508266;
-            Lon = -0.149464;
             InitialZoom = 12;
-            Title = "The Naval Club";
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -61,21 +59,36 @@ namespace ProductDetails
             //GMap1.resetMarkerClusterer();
             GMap1.resetMarkers();
             GMap1.resetMarkerManager();
-
-            GMap1.setCenter(new GLatLng(Lat, Lon), InitialZoom);
         }
 
         private void FillHome()
         {
-            GLatLng gLatLng = new GLatLng(Lat, Lon);
-            PinIcon pinIcon = new PinIcon(PinIcons.home, Color.FromArgb(0xB4, 0x97, 0x59));
-            var markerOptions = new GMarkerOptions(new GIcon(pinIcon.ToString(), pinIcon.Shadow()), Title.Replace("'", "´"));
-            GMarker marker = new GMarker(gLatLng, markerOptions);
-            //GMarker marker = new GMarker(gLatLng);
-            StringBuilder sb = new StringBuilder();
-            sb.Append(Title);
-            GInfoWindow window = new GInfoWindow(marker, sb.ToString(), false);
-            GMap1.addInfoWindow(window);
+            GLatLng gLatLng = null;
+            if (Lat.HasValue)
+            {
+                gLatLng = new GLatLng(Lat.Value, Lon.Value);
+            }
+            else
+            {
+                GeoCode geoCode = GMap1.getGeoCodeRequest(Address);
+                if (geoCode.valid)
+                {
+                    gLatLng = geoCode.Placemark.coordinates;
+                }
+            }
+            if (gLatLng != null)
+            {
+                PinIcon pinIcon = new PinIcon(PinIcons.home, Color.FromArgb(0xB4, 0x97, 0x59));
+                var markerOptions = new GMarkerOptions(new GIcon(pinIcon.ToString(), pinIcon.Shadow()),
+                    Title.Replace("'", "´"));
+                GMarker marker = new GMarker(gLatLng, markerOptions);
+                //GMarker marker = new GMarker(gLatLng);
+                StringBuilder sb = new StringBuilder();
+                sb.Append(Title);
+                GInfoWindow window = new GInfoWindow(marker, sb.ToString(), false);
+                GMap1.addInfoWindow(window);
+                GMap1.setCenter(new GLatLng(gLatLng.lat, gLatLng.lng), InitialZoom);
+            }
         }
 
         protected string GMap1_ZoomEnd(object s, GAjaxServerEventZoomArgs e)

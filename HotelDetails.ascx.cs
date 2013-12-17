@@ -56,20 +56,16 @@ namespace Cowrie.Modules.ProductDetails
                                     }
                                 }
                             }
-                            page.KeyWords = keyWords + ", " + String.Join(", ", locations);
+                            LabelLocation.Text = String.Join("<br />", locations);
+                            // Example: Airport Guest House, 560 London Road, SLOUGH, Berkshire, England, SL3 8QF
+                            var addressToGeoCode = keyWords + ", " + String.Join(", ", locations);
+                            page.KeyWords = addressToGeoCode;
                             locations.Reverse();
                             page.Title += " | " + String.Join(" | ", locations);
-                            LabelLocation.Text = String.Join(", ", locations);
-                            if (hotel.Lat.HasValue && hotel.Lon.HasValue)
-                            {
-                                PointOnMap1.Visible = true;
-                                PointOnMap1.Lat = hotel.Lat.Value;
-                                PointOnMap1.Lon = hotel.Lon.Value;
-                            }
-                            else
-                            {
-                                PointOnMap1.Visible = false;
-                            }
+                            PointOnMap1.Lat = hotel.Lat;
+                            PointOnMap1.Lon = hotel.Lon;
+                            PointOnMap1.Title = hotel.Name;
+                            PointOnMap1.Address = addressToGeoCode;
                             DataBind();
                         }
                     }
