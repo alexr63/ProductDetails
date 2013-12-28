@@ -41,7 +41,7 @@
 </div>
 <div id="details" style="padding: 10px;">
     <h1><%# hotel.Name %></h1>
-    <h2><%# Utils.GetCurrencySymbol(hotel.CurrencyCode) %><%# hotel.UnitCost.Value.ToString("#0.00") %></h2>
+    <h2><%# hotel.UnitCost != null ? Utils.GetCurrencySymbol(hotel.CurrencyCode) + hotel.UnitCost.Value.ToString("#0.00") : String.Empty %></h2>
     <telerik:RadRating ID="RadRatingStar" runat="server" Value='<%# hotel.Star ?? 0.0m %>' ReadOnly="True" />
     <div id="description" style="padding: 10px;">
         <%# hotel.Description %>
