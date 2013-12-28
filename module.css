@@ -1,23 +1,4 @@
-﻿#categories
-{
-	clear: left;
-	float: left;
-	width: 25%;
-	padding: 20px 0;
-	margin: 0 0 0 30px;
-	display: inline;
-}
-
-#products
-{
-	float: right;
-	width: 65%;
-	padding: 20px 0;
-	margin: 0 20px 0 0;
-	display: inline;
-}
-
-div#footer
+﻿div#footer
 {
     text-align: right;
 }
