@@ -9,7 +9,7 @@ using DotNetNuke;
 using DotNetNuke.Common.Utilities;
 using DotNetNuke.Entities.Modules;
 using DotNetNuke.Services.Search;
-using ProductList;
+using SelectedHotelsModel;
 
 namespace Cowrie.ProductDetails.Components
 {

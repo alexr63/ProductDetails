@@ -4,12 +4,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Web.UI;
+using Common;
 using DotNetNuke.Entities.Modules;
 using DotNetNuke.Entities.Portals;
 using DotNetNuke.Entities.Tabs;
 using DotNetNuke.Services.Exceptions;
 using ProductDetails;
-using ProductList;
+using SelectedHotelsModel;
 
 namespace Cowrie.Modules.ProductDetails
 {

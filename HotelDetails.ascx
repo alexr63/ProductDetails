@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="HotelDetails.ascx.cs"
     Inherits=" Cowrie.Modules.ProductDetails.HotelDetails" %>
-<%@ Import Namespace="ProductList" %>
+<%@ Import Namespace="Common" %>
 <%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
 <%@ Register Src="~/DesktopModules/ProductDetails/PointOnMap.ascx" TagPrefix="uc1" TagName="PointOnMap" %>
 

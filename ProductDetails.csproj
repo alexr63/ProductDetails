@@ -65,10 +65,11 @@
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>packages\EntityFramework.6.0.1\lib\net40\EntityFramework.dll</HintPath>
+      <HintPath>..\ProductList\packages\EntityFramework.6.0.1\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>packages\EntityFramework.6.0.1\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ProductList\packages\EntityFramework.6.0.1\lib\net40\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="GMaps, Version=4.1.0.6, Culture=neutral, PublicKeyToken=564d55b144e7aa5a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -187,9 +188,13 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ProductList\ProductList.csproj">
-      <Project>{1ddf1f26-6796-4a6f-b7ad-7e599a860176}</Project>
-      <Name>ProductList</Name>
+    <ProjectReference Include="..\..\..\..\..\Projects\Cowrie\Common\Common.csproj">
+      <Project>{17f13398-02f4-43e3-9343-1191c2372cc9}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\Projects\Cowrie\SelectedHotelsModel\SelectedHotelsModel.csproj">
+      <Project>{58ed5699-0ce6-4868-9876-f99d40899857}</Project>
+      <Name>SelectedHotelsModel</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
