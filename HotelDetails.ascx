@@ -14,7 +14,7 @@
 
 <div id="images" style="padding: 10px; float: left; width: 470px">
     <div id="image">
-        <asp:Image ID="Image1" runat="server" ImageUrl='<%# hotel.Image %>' />
+        <asp:Image ID="Image1" runat="server" ImageUrl='<%# hotel.Image %>' Width="450px" />
     </div>
     <div id="gallery" style="padding: 10px; clear: both">
         <asp:Repeater ID="Repeater1" runat="server">
