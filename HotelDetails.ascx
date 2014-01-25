@@ -46,6 +46,9 @@
     <div id="description" style="padding: 10px;">
         <%# hotel.Description %>
     </div>
+    <div id="extradescription" style="padding: 10px;">
+        <%# hotel.ExtraDescription %>
+    </div>
 </div>
 <div id="footer">
     <asp:Button ID="ButtonBackToSearch" runat="server" Text="Back to Search" CausesValidation="False" OnClick="ButtonBackToSearch_Click" UseSubmitBehavior="False" />
