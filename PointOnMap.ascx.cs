@@ -23,8 +23,11 @@ namespace ProductDetails
         {
             if (!IsPostBack)
             {
-                ResetMap();
-                FillHome();
+                if (Request.QueryString["Id"] != null)
+                {
+                    ResetMap();
+                    FillHome();
+                }
             }
             else
             {
@@ -68,7 +71,7 @@ namespace ProductDetails
             {
                 gLatLng = new GLatLng(Lat.Value, Lon.Value);
             }
-            else
+            else if (Address != null)
             {
                 GeoCode geoCode = GMap1.getGeoCodeRequest(Address);
                 if (geoCode.valid)

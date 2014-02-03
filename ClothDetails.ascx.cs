@@ -13,27 +13,29 @@ namespace Cowrie.Modules.ProductList
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            try
+            if (!IsPostBack)
             {
-                if (IsPostBack) return;
-                if (Request.QueryString["Id"] != null)
+                try
                 {
-                    int id = int.Parse(Request.QueryString["Id"]);
-                    using (SelectedHotelsEntities db = new SelectedHotelsEntities())
+                    if (Request.QueryString["Id"] != null)
                     {
-                        cloth = db.Products.Find(id) as Cloth;
-                        if (cloth != null)
+                        int id = int.Parse(Request.QueryString["Id"]);
+                        using (SelectedHotelsEntities db = new SelectedHotelsEntities())
                         {
-                            Repeater1.DataSource = cloth.ProductImages;
-                            Repeater1.DataBind();
+                            cloth = db.Products.Find(id) as Cloth;
+                            if (cloth != null)
+                            {
+                                Repeater1.DataSource = cloth.ProductImages;
+                                Repeater1.DataBind();
+                            }
+                            DataBind();
                         }
-                        DataBind();
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                Exceptions.ProcessModuleLoadException(this, ex);
+                catch (Exception ex)
+                {
+                    Exceptions.ProcessModuleLoadException(this, ex);
+                }
             }
         }
     }

@@ -30,8 +30,8 @@ namespace Cowrie.Modules.ProductDetails
                                 Repeater1.DataBind();
                                 RepeaterSpecs.DataSource = boat.ProductSpecs;
                                 RepeaterSpecs.DataBind();
+                                DataBind();
                             }
-                            DataBind();
                         }
                     }
                 }

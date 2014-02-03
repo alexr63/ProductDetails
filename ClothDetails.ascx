@@ -1,5 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ClothesDetails.ascx.cs"
     Inherits=" Cowrie.Modules.ProductList.ClothesDetails" %>
+<%@ Import Namespace="Common" %>
 <%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
 <script src='<%#ResolveUrl("~/DesktopModules/ProductList/Scripts/fancybox/jquery.fancybox-1.3.4.js")%>' type="text/javascript"></script>
 <link href='<%#ResolveUrl("~/DesktopModules/ProductList/Scripts/fancybox/jquery.fancybox-1.3.4.css")%>' type="text/css" rel="stylesheet" />
@@ -10,8 +11,7 @@
 </script>
 
 <h1><%# cloth.Name %></h1>
-<h2><%# cloth.UnitCost.Value.ToString("C") %></h2>
-<h3><%# cloth.Size %></h3>
+<h2><%# cloth.UnitCost != null ? Utils.GetCurrencySymbol(cloth.CurrencyCode) + cloth.UnitCost.Value.ToString("#0.00") : String.Empty %></h2>
 <div style="padding: 10px; float: left">
     <asp:Image ID="Image1" runat="server" ImageUrl='<%# cloth.Image %>' />
 </div>
