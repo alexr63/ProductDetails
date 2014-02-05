@@ -2,6 +2,7 @@
 
 using System;
 using DotNetNuke.Entities.Modules;
+using DotNetNuke.Entities.Portals;
 using DotNetNuke.Services.Exceptions;
 using SelectedHotelsModel;
 
@@ -25,8 +26,10 @@ namespace Cowrie.Modules.ProductList
                             cloth = db.Products.Find(id) as Cloth;
                             if (cloth != null)
                             {
-                                Repeater1.DataSource = cloth.ProductImages;
-                                Repeater1.DataBind();
+                                RepeaterSizes.DataSource = cloth.ClothSizes;
+                                RepeaterSizes.DataBind();
+                                RepeaterImages.DataSource = cloth.ProductImages;
+                                RepeaterImages.DataBind();
                             }
                             DataBind();
                         }
@@ -37,6 +40,11 @@ namespace Cowrie.Modules.ProductList
                     Exceptions.ProcessModuleLoadException(this, ex);
                 }
             }
+        }
+        protected void ButtonBackToSearch_Click(object sender, EventArgs e)
+        {
+            Session["ReturnFromDetails"] = true;
+            Response.Redirect(DotNetNuke.Common.Globals.NavigateURL(PortalSettings.ActiveTab.ParentId));
         }
     }
 }

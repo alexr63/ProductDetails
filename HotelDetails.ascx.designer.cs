@@ -22,7 +22,7 @@ namespace Cowrie.Modules.ProductDetails {
         protected global::System.Web.UI.WebControls.Image Image1;
         
         /// <summary>
-        /// Repeater1 control.
+        /// RepeaterImages control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.

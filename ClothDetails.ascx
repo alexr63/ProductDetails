@@ -18,8 +18,24 @@
 <div style="padding: 10px; float: left">
     <%# cloth.Description %>
 </div>
+<div style="padding: 10px; float: left">
+    <asp:Repeater ID="RepeaterSizes" runat="server">
+        <HeaderTemplate>
+            Sizes:
+            <ul>
+        </HeaderTemplate>
+        <ItemTemplate>
+            <li>
+                <%# Eval("Size") %>
+            </li>
+        </ItemTemplate>
+        <FooterTemplate>
+            </ul>
+        </FooterTemplate>
+    </asp:Repeater>
+</div>
 <div style="padding: 10px; clear: both">
-    <asp:Repeater ID="Repeater1" runat="server">
+    <asp:Repeater ID="RepeaterImages" runat="server">
         <HeaderTemplate>
         </HeaderTemplate>
         <ItemTemplate>
@@ -32,4 +48,7 @@
         <FooterTemplate>
         </FooterTemplate>
     </asp:Repeater>
+</div>
+<div id="footer">
+    <asp:Button ID="ButtonBackToSearch" runat="server" Text="Back to Search" CausesValidation="False" OnClick="ButtonBackToSearch_Click" UseSubmitBehavior="False" />
 </div>

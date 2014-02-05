@@ -22,12 +22,30 @@ namespace Cowrie.Modules.ProductList {
         protected global::System.Web.UI.WebControls.Image Image1;
         
         /// <summary>
-        /// Repeater1 control.
+        /// RepeaterSizes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater Repeater1;
+        protected global::System.Web.UI.WebControls.Repeater RepeaterSizes;
+        
+        /// <summary>
+        /// RepeaterImages control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater RepeaterImages;
+        
+        /// <summary>
+        /// ButtonBackToSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonBackToSearch;
     }
 }
