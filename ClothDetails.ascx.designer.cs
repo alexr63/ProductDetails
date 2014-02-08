@@ -10,7 +10,7 @@
 namespace Cowrie.Modules.ProductList {
     
     
-    public partial class ClothesDetails {
+    public partial class ClothDetails {
         
         /// <summary>
         /// Image1 control.

@@ -8,7 +8,7 @@ using SelectedHotelsModel;
 
 namespace Cowrie.Modules.ProductList
 {
-    public partial class ClothesDetails : PortalModuleBase
+    public partial class ClothDetails : PortalModuleBase
     {
         public Cloth cloth;
 
