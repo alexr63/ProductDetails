@@ -13,7 +13,7 @@
 <h1><%# cloth.Name %></h1>
 <h2><%# cloth.UnitCost != null ? Utils.GetCurrencySymbol(cloth.CurrencyCode) + cloth.UnitCost.Value.ToString("#0.00") : String.Empty %></h2>
 <h3><%# cloth.Brand.Name %></h3>
-<h3><%# cloth.MerchantCategory.Name %></h3>
+<h3><%# cloth.MerchantCategory != null ? cloth.MerchantCategory.Name : String.Empty %></h3>
 <div style="padding: 10px; float: left">
     <asp:Image ID="Image1" runat="server" ImageUrl='<%# cloth.Image %>' />
 </div>
