@@ -31,6 +31,24 @@ namespace Cowrie.Modules.ProductList {
         protected global::System.Web.UI.WebControls.Repeater RepeaterSizes;
         
         /// <summary>
+        /// RepeaterStyles control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater RepeaterStyles;
+        
+        /// <summary>
+        /// RepeaterDepartments control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater RepeaterDepartments;
+        
+        /// <summary>
         /// RepeaterImages control.
         /// </summary>
         /// <remarks>

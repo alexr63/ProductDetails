@@ -28,8 +28,12 @@ namespace Cowrie.Modules.ProductList
                             {
                                 RepeaterSizes.DataSource = cloth.ClothSizes;
                                 RepeaterSizes.DataBind();
+                                RepeaterStyles.DataSource = cloth.Styles;
+                                RepeaterStyles.DataBind();
                                 RepeaterImages.DataSource = cloth.ProductImages;
                                 RepeaterImages.DataBind();
+                                RepeaterDepartments.DataSource = cloth.Departments;
+                                RepeaterDepartments.DataBind();
                             }
                             DataBind();
                         }

@@ -14,6 +14,8 @@
 <h2><%# cloth.UnitCost != null ? Utils.GetCurrencySymbol(cloth.CurrencyCode) + cloth.UnitCost.Value.ToString("#0.00") : String.Empty %></h2>
 <h3><%# cloth.Brand.Name %></h3>
 <h3><%# cloth.MerchantCategory != null ? cloth.MerchantCategory.Name : String.Empty %></h3>
+<h3><%# cloth.Gender %></h3>
+<h3><%# cloth.Colour %></h3>
 <div style="padding: 10px; float: left">
     <asp:Image ID="Image1" runat="server" ImageUrl='<%# cloth.Image %>' />
 </div>
@@ -29,6 +31,38 @@
         <ItemTemplate>
             <li>
                 <%# Eval("Size") %>
+            </li>
+        </ItemTemplate>
+        <FooterTemplate>
+            </ul>
+        </FooterTemplate>
+    </asp:Repeater>
+</div>
+<div style="padding: 10px; float: left">
+    <asp:Repeater ID="RepeaterStyles" runat="server">
+        <HeaderTemplate>
+            Styles:
+            <ul>
+        </HeaderTemplate>
+        <ItemTemplate>
+            <li>
+                <%# Eval("Name") %>
+            </li>
+        </ItemTemplate>
+        <FooterTemplate>
+            </ul>
+        </FooterTemplate>
+    </asp:Repeater>
+</div>
+<div style="padding: 10px; float: left">
+    <asp:Repeater ID="RepeaterDepartments" runat="server">
+        <HeaderTemplate>
+            Departments:
+            <ul>
+        </HeaderTemplate>
+        <ItemTemplate>
+            <li>
+                <%# Eval("Name") %>
             </li>
         </ItemTemplate>
         <FooterTemplate>
