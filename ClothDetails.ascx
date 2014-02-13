@@ -87,4 +87,6 @@
 </div>
 <div id="footer">
     <asp:Button ID="ButtonBackToSearch" runat="server" Text="Back to Search" CausesValidation="False" OnClick="ButtonBackToSearch_Click" UseSubmitBehavior="False" />
+    &nbsp;
+    <asp:Button ID="ButtonBuyNow" runat="server" Text="Buy Now!" CausesValidation="False" OnClick="ButtonBuyNow_Click" UseSubmitBehavior="False" />
 </div>

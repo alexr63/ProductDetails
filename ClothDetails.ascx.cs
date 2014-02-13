@@ -45,6 +45,22 @@ namespace Cowrie.Modules.ProductList
                 }
             }
         }
+        protected void ButtonBuyNow_Click(object sender, EventArgs e)
+        {
+            if (Request.QueryString["Id"] != null)
+            {
+                int id = int.Parse(Request.QueryString["Id"]);
+                using (SelectedHotelsEntities db = new SelectedHotelsEntities())
+                {
+                    cloth = db.Products.Find(id) as Cloth;
+                    if (cloth != null)
+                    {
+                        Response.Redirect(cloth.URL);
+                    }
+                }
+            }
+        }
+
         protected void ButtonBackToSearch_Click(object sender, EventArgs e)
         {
             Session["ReturnFromDetails"] = true;
