@@ -64,7 +64,15 @@ namespace Cowrie.Modules.ProductList
         protected void ButtonBackToSearch_Click(object sender, EventArgs e)
         {
             Session["ReturnFromDetails"] = true;
-            Response.Redirect(DotNetNuke.Common.Globals.NavigateURL(PortalSettings.ActiveTab.ParentId));
+            if (Session["ListTabId"] != null)
+            {
+                Response.Redirect(DotNetNuke.Common.Globals.NavigateURL(Convert.ToInt32(Session["ListTabId"])));
+                Session["ListTabId"] = null;
+            }
+            else
+            {
+                Response.Redirect(DotNetNuke.Common.Globals.NavigateURL(PortalSettings.ActiveTab.ParentId));
+            }
         }
     }
 }
