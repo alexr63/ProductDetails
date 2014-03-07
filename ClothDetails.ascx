@@ -14,8 +14,8 @@
 <h2><%# cloth.UnitCost != null ? Utils.GetCurrencySymbol(cloth.CurrencyCode) + cloth.UnitCost.Value.ToString("#0.00") : String.Empty %></h2>
 <h3><%# cloth.Brand.Name %></h3>
 <h3><%# cloth.MerchantCategory != null ? cloth.MerchantCategory.Name : String.Empty %></h3>
-<h3><%# cloth.Gender %></h3>
-<h3><%# cloth.Colour %></h3>
+<h3><%# cloth.Gender.Name %></h3>
+<h3><%# cloth.Colour.Name %></h3>
 <div style="padding: 10px; float: left">
     <asp:Image ID="Image1" runat="server" ImageUrl='<%# cloth.Image %>' />
 </div>
@@ -30,7 +30,7 @@
         </HeaderTemplate>
         <ItemTemplate>
             <li>
-                <%# Eval("Size") %>
+                <%# Eval("Name") %>
             </li>
         </ItemTemplate>
         <FooterTemplate>

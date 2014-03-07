@@ -1,6 +1,7 @@
 ﻿// Copyright (c) 2012 Cowrie
 
 using System;
+using System.Linq;
 using DotNetNuke.Entities.Modules;
 using DotNetNuke.Entities.Portals;
 using DotNetNuke.Services.Exceptions;
@@ -26,14 +27,30 @@ namespace Cowrie.Modules.ProductList
                             cloth = db.Products.Find(id) as Cloth;
                             if (cloth != null)
                             {
-                                RepeaterSizes.DataSource = cloth.ClothSizes;
-                                RepeaterSizes.DataBind();
-                                RepeaterStyles.DataSource = cloth.Styles;
-                                RepeaterStyles.DataBind();
-                                RepeaterImages.DataSource = cloth.ProductImages;
-                                RepeaterImages.DataBind();
-                                RepeaterDepartments.DataSource = cloth.Departments;
-                                RepeaterDepartments.DataBind();
+                                if (cloth.Sizes.Any())
+                                {
+                                    RepeaterSizes.Visible = true;
+                                    RepeaterSizes.DataSource = cloth.Sizes;
+                                    RepeaterSizes.DataBind();
+                                }
+                                if (cloth.Styles.Any())
+                                {
+                                    RepeaterStyles.Visible = true;
+                                    RepeaterStyles.DataSource = cloth.Styles;
+                                    RepeaterStyles.DataBind();
+                                }
+                                if (cloth.ProductImages.Any())
+                                {
+                                    RepeaterImages.Visible = true;
+                                    RepeaterImages.DataSource = cloth.ProductImages;
+                                    RepeaterImages.DataBind();
+                                }
+                                if (cloth.Departments.Any())
+                                {
+                                    RepeaterDepartments.Visible = true;
+                                    RepeaterDepartments.DataSource = cloth.Departments;
+                                    RepeaterDepartments.DataBind();
+                                }
                             }
                             DataBind();
                         }
