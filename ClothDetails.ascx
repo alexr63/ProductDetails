@@ -12,6 +12,7 @@
 
 <h1><%# cloth.Name %></h1>
 <h2><%# cloth.UnitCost != null ? Utils.GetCurrencySymbol(cloth.CurrencyCode) + cloth.UnitCost.Value.ToString("#0.00") : String.Empty %></h2>
+<telerik:RadRating ID="RadRatingStar" runat="server" Value='<%# cloth.CustomerRating %>' ReadOnly="True" />
 <h3><%# cloth.Brand.Name %></h3>
 <h3><%# cloth.MerchantCategory != null ? cloth.MerchantCategory.Name : String.Empty %></h3>
 <h3><%# cloth.Gender.Name %></h3>
