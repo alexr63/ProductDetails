@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Web.UI;
 using Common;
@@ -44,19 +45,9 @@ namespace Cowrie.Modules.ProductDetails
                                 {
                                     keyWords += ", " + hotel.Address;
                                 }
-                                List<string> locations = new List<string>();
-                                if (hotel.Location != null)
-                                {
-                                    locations.Add(hotel.Location.Name);
-                                    if (hotel.Location.ParentLocation != null)
-                                    {
-                                        locations.Add(hotel.Location.ParentLocation.Name);
-                                        if (hotel.Location.ParentLocation.ParentLocation != null)
-                                        {
-                                            locations.Add(hotel.Location.ParentLocation.ParentLocation.Name);
-                                        }
-                                    }
-                                }
+                                var locations =
+                                    hotel.HotelLocations.OrderByDescending(hl => hl.Location.LocationTypeId)
+                                        .Select(hl => hl.Location.Name);
                                 LabelLocation.Text = String.Join("<br />", locations);
                                 // Example: Airport Guest House, 560 London Road, SLOUGH, Berkshire, England, SL3 8QF
                                 var addressToGeoCode = keyWords + ", " + String.Join(", ", locations);
