@@ -3,7 +3,7 @@ ECHO %1 Passed command is the debug/release flag
 ECHO Declare paths needed, package path is cleaned at start
 set project= "C:\Home\Cowrie\selectedhot.local\DesktopModules\ProductDetails"
 set rootPath="C:\Home\Cowrie\selectedhot.local\Bin"
-set package= "C:\Users\Alex\Dropbox\Projects\Cowrie\Modules\ProductDetails"
+set package= "C:\Temp\ProductDetails"
 
 ECHO Delete Existing Files from package location!  CAREFUL!!!
 ECHO Y | DEL %package%\*.*
