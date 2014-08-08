@@ -55,8 +55,8 @@ namespace Cowrie.Modules.ProductDetails
                                     page.Title += " | " + location;
                                     PointOnMap1.Address = addressToGeoCode;
                                 }
-                                PointOnMap1.Lat = hotel.Lat;
-                                PointOnMap1.Lon = hotel.Lon;
+                                PointOnMap1.Lat = hotel.Location.Latitude;
+                                PointOnMap1.Lon = hotel.Location.Longitude;
                                 PointOnMap1.Title = hotel.Name;
                                 DataBind();
                             }
