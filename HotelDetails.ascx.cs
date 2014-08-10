@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Web.ModelBinding;
 using System.Web.UI;
 using Common;
 using DotNetNuke.Entities.Modules;
@@ -25,43 +26,42 @@ namespace Cowrie.Modules.ProductDetails
             {
                 try
                 {
-                    if (Request.QueryString["Id"] != null)
-                    {
-                        int id = int.Parse(Request.QueryString["Id"]);
-                        using (SelectedHotelsEntities db = new SelectedHotelsEntities())
-                        {
-                            hotel = db.Products.Find(id) as Hotel;
-                            if (hotel != null)
-                            {
-                                ((DotNetNuke.Framework.CDefault) Page).Title = hotel.Name;
-                                Repeater1.DataSource = hotel.ProductImages;
-                                Repeater1.DataBind();
+                    //if (Request.QueryString["Id"] != null)
+                    //{
+                    //    int id = int.Parse(Request.QueryString["Id"]);
+                    //    using (SelectedHotelsEntities db = new SelectedHotelsEntities())
+                    //    {
+                    //        hotel = db.Products.Find(id) as Hotel;
+                    //        if (hotel != null)
+                    //        {
+                    //            ((DotNetNuke.Framework.CDefault) Page).Title = hotel.Name;
+                    //            Repeater1.DataSource = hotel.ProductImages;
+                    //            Repeater1.DataBind();
 
-                                var page = (DotNetNuke.Framework.CDefault) this.Page;
-                                page.Title = String.Format("{0} | {1}", PortalSettings.PortalName, hotel.Name);
-                                page.Description = hotel.Description.TruncateAtWord(150);
-                                var keyWords = hotel.Name;
-                                if (!String.IsNullOrEmpty(hotel.Address))
-                                {
-                                    keyWords += ", " + hotel.Address;
-                                }
-                                if (hotel.GeoName != null)
-                                {
-                                    var location = hotel.GeoName.Name;
-                                    LabelLocation.Text = location;
-                                    // Example: Airport Guest House, 560 London Road, SLOUGH, Berkshire, England, SL3 8QF
-                                    var addressToGeoCode = keyWords + ", " + location;
-                                    page.KeyWords = addressToGeoCode;
-                                    page.Title += " | " + location;
-                                    PointOnMap1.Address = addressToGeoCode;
-                                }
-                                PointOnMap1.Lat = hotel.Location.Latitude;
-                                PointOnMap1.Lon = hotel.Location.Longitude;
-                                PointOnMap1.Title = hotel.Name;
-                                DataBind();
-                            }
-                        }
-                    }
+                    //            var page = (DotNetNuke.Framework.CDefault) this.Page;
+                    //            page.Title = String.Format("{0} | {1}", PortalSettings.PortalName, hotel.Name);
+                    //            page.Description = hotel.Description.TruncateAtWord(150);
+                    //            var keyWords = hotel.Name;
+                    //            if (!String.IsNullOrEmpty(hotel.Address))
+                    //            {
+                    //                keyWords += ", " + hotel.Address;
+                    //            }
+                    //            if (hotel.GeoName != null)
+                    //            {
+                    //                var location = hotel.GeoName.Name;
+                    //                // Example: Airport Guest House, 560 London Road, SLOUGH, Berkshire, England, SL3 8QF
+                    //                var addressToGeoCode = keyWords + ", " + location;
+                    //                page.KeyWords = addressToGeoCode;
+                    //                page.Title += " | " + location;
+                    //                PointOnMap1.Address = addressToGeoCode;
+                    //            }
+                    //            PointOnMap1.Lat = hotel.Location.Latitude;
+                    //            PointOnMap1.Lon = hotel.Location.Longitude;
+                    //            PointOnMap1.Title = hotel.Name;
+                    //            DataBind();
+                    //        }
+                    //    }
+                    //}
                 }
                 catch (Exception ex)
                 {
@@ -70,6 +70,12 @@ namespace Cowrie.Modules.ProductDetails
             }
         }
 
+        public IQueryable<Hotel> GetHotel([QueryString("Id")] int? id)
+        {
+            var db = new SelectedHotelsEntities();
+            IQueryable<Hotel> query = db.Products.OfType<Hotel>().Where(h => h.Id == id);
+            return query;
+        }
         protected void ButtonBookNow_Click(object sender, EventArgs e)
         {
             if (Request.QueryString["Id"] != null)
