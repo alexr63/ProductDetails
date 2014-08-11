@@ -130,7 +130,6 @@
       <DependentUpon>HotelDetails.ascx</DependentUpon>
     </Compile>
     <Compile Include="Enums.cs" />
-    <Compile Include="PageQuery.cs" />
     <Compile Include="PointOnMap.ascx.cs">
       <DependentUpon>PointOnMap.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
