@@ -122,34 +122,18 @@
       <DependentUpon>ClothDetails.ascx</DependentUpon>
     </Compile>
     <Compile Include="Components\ProductDetailsController.cs" />
-    <Compile Include="HotelDetails.ascx.cs">
-      <DependentUpon>HotelDetails.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="HotelDetails.ascx.designer.cs">
-      <DependentUpon>HotelDetails.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Enums.cs" />
-    <Compile Include="PointOnMap.ascx.cs">
-      <DependentUpon>PointOnMap.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PointOnMap.ascx.designer.cs">
-      <DependentUpon>PointOnMap.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Build\build.bat" />
     <Content Include="BoatDetails.ascx" />
     <Content Include="ClothDetails.ascx" />
-    <Content Include="HotelDetails.ascx" />
     <Content Include="module.css" />
     <Content Include="packages.config" />
     <None Include="ProductDetails.dnn">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="PointOnMap.ascx" />
     <Content Include="Scripts\fancybox\blank.gif" />
     <Content Include="Scripts\fancybox\fancybox-x.png" />
     <Content Include="Scripts\fancybox\fancybox-y.png" />

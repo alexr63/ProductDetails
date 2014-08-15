@@ -6,21 +6,9 @@
       <foldername>ProductDetails</foldername>
       <modulename>ProductDetails</modulename>
       <description>A Product Details module</description>
-      <version>03.00.02</version>
+      <version>03.01.00</version>
       <businesscontrollerclass>Cowrie.ProductDetails.Components.ProductDetailsController</businesscontrollerclass>
       <modules>
-        <module>
-          <friendlyname>Hotel Details</friendlyname>
-          <cachetime>0</cachetime>
-          <controls>
-            <control>
-              <src>DesktopModules/ProductDetails/HotelDetails.ascx</src>
-              <type>View</type>
-              <helpurl></helpurl>
-              <supportspartialrendering>true</supportspartialrendering>
-            </control>
-          </controls>
-        </module>
         <module>
           <friendlyname>Boat Details</friendlyname>
           <cachetime>0</cachetime>
@@ -52,12 +40,6 @@
         </file>
         <file>
           <name>ProductDetails.dll</name>
-        </file>
-        <file>
-          <name>HotelDetails.ascx</name>
-        </file>
-        <file>
-          <name>PointOnMap.ascx</name>
         </file>
         <file>
           <name>BoatDetails.ascx</name>
