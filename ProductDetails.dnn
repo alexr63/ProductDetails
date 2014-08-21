@@ -6,7 +6,7 @@
       <foldername>ProductDetails</foldername>
       <modulename>ProductDetails</modulename>
       <description>A Product Details module</description>
-      <version>03.01.00</version>
+      <version>03.02.00</version>
       <businesscontrollerclass>Cowrie.ProductDetails.Components.ProductDetailsController</businesscontrollerclass>
       <modules>
         <module>
@@ -15,18 +15,6 @@
           <controls>
             <control>
               <src>DesktopModules/ProductDetails/BoatDetails.ascx</src>
-              <type>View</type>
-              <helpurl></helpurl>
-              <supportspartialrendering>true</supportspartialrendering>
-            </control>
-          </controls>
-        </module>
-        <module>
-          <friendlyname>Cloth Details</friendlyname>
-          <cachetime>0</cachetime>
-          <controls>
-            <control>
-              <src>DesktopModules/ProductDetails/ClothDetails.ascx</src>
               <type>View</type>
               <helpurl></helpurl>
               <supportspartialrendering>true</supportspartialrendering>
@@ -43,9 +31,6 @@
         </file>
         <file>
           <name>BoatDetails.ascx</name>
-        </file>
-        <file>
-          <name>ClothDetails.ascx</name>
         </file>
         <file>
           <path>Scripts/fancybox</path>
