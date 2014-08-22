@@ -107,19 +107,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BoatDetails.ascx.cs">
-      <DependentUpon>BoatDetails.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="BoatDetails.ascx.designer.cs">
-      <DependentUpon>BoatDetails.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Components\ProductDetailsController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Build\build.bat" />
-    <Content Include="BoatDetails.ascx" />
     <Content Include="module.css" />
     <Content Include="packages.config" />
     <None Include="ProductDetails.dnn">

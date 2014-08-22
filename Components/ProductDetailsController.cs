@@ -28,13 +28,13 @@ namespace Cowrie.ProductDetails.Components
 			SearchItemInfoCollection searchItems = new SearchItemInfoCollection();
 		    using (SelectedHotelsEntities db = new SelectedHotelsEntities())
 		    {
-                IList<Hotel> hotels = (from p in db.Products
+                IList<Product> products = (from p in db.Products
                                        where !p.IsDeleted
-                                       select p).OfType<Hotel>().ToList();
-		        foreach (var hotel in hotels)
+                                       select p).ToList();
+		        foreach (var product in products)
 		        {
-                    SearchItemInfo searchInfo = new SearchItemInfo(hotel.Name, hotel.Description, hotel.CreatedByUser, hotel.CreatedDate,
-                                                        modInfo.ModuleID, hotel.Id.ToString(), hotel.Description, "Id=" + hotel.Id);
+                    SearchItemInfo searchInfo = new SearchItemInfo(product.Name, product.Description, product.CreatedByUser, product.CreatedDate,
+                                                        modInfo.ModuleID, product.Id.ToString(), product.Description, "Id=" + product.Id);
                     searchItems.Add(searchInfo);
                 }
             }
